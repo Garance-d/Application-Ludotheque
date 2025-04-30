@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ApplicationLudotheque
+  datasource:
+    url: jdbc:postgresql://localhost:5432/LUDO_DB
+    username: LudoUser
+    password: Pa$$w0rd
+
+  jpa:
+    show-sql: true
+
+    hibernate:
+      ddl-auto: create
