@@ -21,7 +21,7 @@ public class ClientRepositoryTest {
         //Arrange
 
         Client client = new Client("Smith", "Bob", "Smith@gmail.com");
-        client.setNum_telephone("0123465789");
+        client.setNum_telephone("0123456789");
 
 
         //ACT
