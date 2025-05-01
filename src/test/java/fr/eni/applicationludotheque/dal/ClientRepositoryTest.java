@@ -1,6 +1,5 @@
 package fr.eni.applicationludotheque.dal;
 
-
 import fr.eni.applicationludotheque.bo.Client;
 
 import org.junit.jupiter.api.Test;
@@ -19,17 +18,14 @@ public class ClientRepositoryTest {
     public void testCreationClient() {
 
         //Arrange
-
         Client client = new Client("Smith", "Bob", "Smith@gmail.com");
         client.setNum_telephone("0123456789");
 
 
         //ACT
-
         Client clientSaved = repo.save(client);
 
         //Assert
-
         Client clientBD = repo.findById(clientSaved.getId_client()).orElse(null);
 
         assertThat(clientBD).isNotNull();
@@ -38,6 +34,4 @@ public class ClientRepositoryTest {
         assertThat(clientBD.getNom()).isEqualTo("Smith");
         assertThat(clientBD.getPrenom()).isEqualTo("Bob");
     }
-
-
 }
