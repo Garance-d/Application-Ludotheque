@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import jakarta.persistence.Table;
+
 
 @Data
 @Table (name = "CLIENTS")
@@ -32,4 +34,11 @@ public class Client {
     @NonNull
     @Column(nullable = false, length =40)
     private String email;
+
+    @NonNull
+    @OneToOne(cascade = CascadeType.ALL,
+        orphanRemoval = true, optional = false,
+        fetch = FetchType.EAGER)
+    @JoinColumn(name = "num_adresse")
+    private Adresse adresse;
 }
