@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @Entity
 @RequiredArgsConstructor
@@ -37,4 +40,11 @@ public class Jeu {
     @NonNull
     @Column(nullable = false)
     private int tarif_jour;
+
+    @ManyToMany (fetch = FetchType.EAGER)
+    @JoinTable (name = "Genre_Assosiation_Jeu",
+            joinColumns = @JoinColumn(name = "id_jeu"),
+            inverseJoinColumns = @JoinColumn(name = "id_genre"))
+
+    private List<Genre> genres = new ArrayList<>();
 }

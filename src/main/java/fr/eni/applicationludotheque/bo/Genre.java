@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @Entity
 @RequiredArgsConstructor
@@ -14,7 +17,6 @@ import lombok.RequiredArgsConstructor;
 public class Genre {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_genre;
 
     @NonNull
